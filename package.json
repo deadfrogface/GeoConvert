@@ -1,0 +1,34 @@
+{
+  "name": "geoconvert",
+  "version": "1.0.0",
+  "description": "Koordinatenumrechnung: Lat/Lon zu Decimal Degrees oder UTM",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^28.0.0"
+  },
+  "devDependencies": {
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.geoconvert.app",
+    "productName": "GeoConvert",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": ["nsis"],
+      "icon": null
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerLanguages": ["de-DE", "en-US"]
+    }
+  }
+}
