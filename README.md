@@ -1,54 +1,54 @@
 # GeoConvert
 
-Desktop-App für die Koordinatenumrechnung: **Latitude/Longitude** (WGS84) → **Decimal Degrees** oder **UTM**. Läuft unter Windows, rein lokal, ohne Netzwerk.
+Desktop app for coordinate conversion: **Latitude/Longitude** (WGS84) → **Decimal Degrees** or **UTM**. Runs on Windows, fully local, no network required.
 
 ---
 
-## Für Endnutzer: App installieren (ohne Node.js)
+## For end users: Install the app (no Node.js)
 
-So bekommst du die fertige Anwendung mit einem Doppelklick auf deinen PC:
+To get the ready-to-use application with a double-click on your PC:
 
-1. Öffne die **Releases**-Seite dieses Repositorys:  
+1. Open the **Releases** page of this repository:  
    **→ [Releases](https://github.com/deadfrogface/GeoConvert/releases)**
-2. Lade die neueste **GeoConvert Setup x.x.x.exe** herunter.
-3. Doppelklick auf die heruntergeladene Datei → Installationsassistent folgen.
-4. Fertig. Die App erscheint im Startmenü und kann wie jede andere Windows-Anwendung genutzt werden. **Node.js ist nicht nötig.**
+2. Download the latest **GeoConvert Setup x.x.x.exe**.
+3. Double-click the downloaded file → follow the installation wizard.
+4. Done. The app appears in the Start menu and can be used like any other Windows application. **Node.js is not required.**
 
 ---
 
-## Maintainer: Installer bereitstellen (ohne Node.js auf dem eigenen PC)
+## Maintainer: Provide the installer (no Node.js on your own PC)
 
-Du musst **kein Node.js** installieren. Der Windows-Installer wird von **GitHub Actions** in der Cloud gebaut:
+You do **not** need to install Node.js. The Windows installer is built by **GitHub Actions** in the cloud:
 
-1. Im Repo auf **Releases** gehen → **„Draft a new release“**.
-2. Einen Tag anlegen (z. B. `v1.0.0`) und Release veröffentlichen (ohne Dateien).
-3. Der Workflow **Build Windows Installer** startet automatisch, baut die `.exe` und hängt sie an das Release an.
-4. Nach wenigen Minuten erscheint **GeoConvert Setup x.x.x.exe** im Release – Endnutzer können sie von dort herunterladen.
+1. In the repo go to **Releases** → **"Draft a new release"**.
+2. Create a tag (e.g. `v1.0.0`) and publish the release (without files).
+3. The **Build Windows Installer** workflow starts automatically, builds the `.exe` and attaches it to the release.
+4. After a few minutes **GeoConvert Setup x.x.x.exe** appears in the release – end users can download it from there.
 
-**Alternative:** Unter **Actions** → **Build Windows Installer** → **Run workflow** einmal ausführen. Die gebaute `.exe` findest du danach als Download unter **Artifacts** (ohne ein Release anlegen zu müssen).
+**Alternative:** Under **Actions** → **Build Windows Installer** → **Run workflow** run it once. The built `.exe` can then be found as a download under **Artifacts** (without creating a release).
 
 ---
 
-## Für Entwickler (mit Node.js)
+## For developers (with Node.js)
 
-Falls du die App lokal starten oder den Installer selbst bauen willst:
+If you want to run the app locally or build the installer yourself:
 
 ```bash
 git clone https://github.com/deadfrogface/GeoConvert.git
 cd GeoConvert
 npm install
-npm start      # App starten
-npm run build  # Installer in dist/ erzeugen
+npm start      # Start app
+npm run build  # Build installer in dist/
 ```
 
 ---
 
-## Kurzüberblick
+## Quick overview
 
-| Ziel | Aktion |
+| Goal | Action |
 |------|--------|
-| **Endnutzer:** fertige App nutzen | [Releases](https://github.com/deadfrogface/GeoConvert/releases) → **GeoConvert Setup x.x.x.exe** herunterladen → Doppelklick → installieren. **Keine zusätzliche Software nötig.** |
-| **Maintainer:** Installer bereitstellen | Neues Release anlegen (mit Tag) → veröffentlichen → GitHub baut die `.exe` und hängt sie an. **Kein Node.js nötig.** |
-| **Entwickler:** App lokal bauen/starten | Node.js installieren → `npm install` → `npm start` / `npm run build`. |
+| **End user:** use the ready-made app | [Releases](https://github.com/deadfrogface/GeoConvert/releases) → download **GeoConvert Setup x.x.x.exe** → double-click → install. **No additional software required.** |
+| **Maintainer:** provide the installer | Create a new release (with tag) → publish → GitHub builds the `.exe` and attaches it. **No Node.js required.** |
+| **Developer:** build/run app locally | Install Node.js → `npm install` → `npm start` / `npm run build`. |
 
-Die Anwendung arbeitet vollständig offline; es werden keine externen APIs oder Bibliotheken für die Koordinatenumrechnung verwendet.
+The application runs fully offline; no external APIs or libraries are used for coordinate conversion.

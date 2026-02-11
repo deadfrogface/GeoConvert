@@ -33,13 +33,13 @@
 
   function validate(lat, lon) {
     if (Number.isNaN(lat) || Number.isNaN(lon)) {
-      return 'Bitte gültige Zahlen für Latitude und Longitude eingeben.';
+      return 'Please enter valid numbers for latitude and longitude.';
     }
     if (lat < -90 || lat > 90) {
-      return 'Latitude muss zwischen −90 und +90 liegen.';
+      return 'Latitude must be between −90 and +90.';
     }
     if (lon < -180 || lon > 180) {
-      return 'Longitude muss zwischen −180 und +180 liegen.';
+      return 'Longitude must be between −180 and +180.';
     }
     return null;
   }
@@ -51,7 +51,7 @@
     const lon = parseNumber(lonInput.value);
     const err = validate(lat, lon);
     if (err) {
-      showError('Fehler: ' + err);
+      showError('Error: ' + err);
       return;
     }
 

@@ -1,6 +1,6 @@
 /**
- * Koordinatenumrechnung (lokal, WGS84).
- * Keine externen Bibliotheken – Formeln nach USGS/Standard UTM.
+ * Coordinate conversion (local, WGS84).
+ * No external libraries – formulas per USGS/standard UTM.
  */
 
 (function (global) {
@@ -22,7 +22,7 @@
   }
 
   /**
-   * Formatiert Lat/Lon als Decimal Degrees (6 Dezimalstellen).
+   * Format Lat/Lon as Decimal Degrees (6 decimal places).
    */
   function formatDecimalDegrees(lat, lon) {
     const latStr = Number(lat).toFixed(6);
@@ -31,21 +31,21 @@
   }
 
   /**
-   * UTM-Zone aus Längengrad (1–60).
+   * UTM zone from longitude (1–60).
    */
   function getZone(lon) {
     return Math.floor((lon + 180) / 6) + 1;
   }
 
   /**
-   * Zentralmeridian der Zone in Grad.
+   * Central meridian of zone in degrees.
    */
   function getCentralMeridian(zone) {
     return (zone - 1) * 6 - 180 + 3;
   }
 
   /**
-   * Meridianbogen M vom Äquator bis lat (in Metern). WGS84.
+   * Meridian arc M from equator to lat (in metres). WGS84.
    */
   function meridianArc(latRad) {
     const a = WGS84.a;
@@ -63,7 +63,7 @@
   }
 
   /**
-   * Lat/Lon (Grad) → UTM (Zone, Hemisphere, Easting, Northing). WGS84.
+   * Lat/Lon (degrees) → UTM (zone, hemisphere, easting, northing). WGS84.
    */
   function latLonToUtm(lat, lon) {
     const zone = Math.max(1, Math.min(60, getZone(lon)));
@@ -113,7 +113,7 @@
   }
 
   /**
-   * Ausgabe als Text für UTM.
+   * Output as text for UTM.
    */
   function formatUtm(lat, lon) {
     const u = latLonToUtm(lat, lon);
